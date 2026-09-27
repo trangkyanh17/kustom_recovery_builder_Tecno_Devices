@@ -100,13 +100,8 @@ jobs:
       id: manifest
       with:
         cond: ${{ inputs.MANIFEST_BRANCH == 'aera-16.0' }}
-        if_true: git@github.com:AERA-Recovery/android_manifest.git
+        if_true: https://github.com/AERA-Recovery/android_manifest.git
       continue-on-error: true
-
-    - name: Setup SSH Key
-      uses: webfactory/ssh-agent@v0.9.0
-      with:
-        ssh-private-key: ${{ secrets.SSH_KEY }}
             
     - name: Initialize Repo
       run: |
