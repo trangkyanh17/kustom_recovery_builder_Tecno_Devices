@@ -1,4 +1,4 @@
-# build custom recovery up to 12.1 
+# build custom recovery up to 16.0 
 build the damn recovery rahhhh
 
 <h1>Add Secrets to GitHub</h1>
