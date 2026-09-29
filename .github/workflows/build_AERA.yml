@@ -140,7 +140,7 @@ jobs:
     - name: Repo Sync
       run: |
         cd android-recovery
-        repo sync -j$(nproc --all) --force-sync
+        repo sync -c --force-sync --no-clone-bundle --no-tags -j4
       continue-on-error: true
       
     - name: Clone Device Tree
