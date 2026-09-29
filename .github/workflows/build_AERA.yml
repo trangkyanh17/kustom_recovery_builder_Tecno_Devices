@@ -112,6 +112,14 @@ jobs:
       run: |
         mkdir android-recovery
         cd android-recovery
+        
+        mkdir -p ~/.ssh
+        echo "Host github.com" >> ~/.ssh/config
+        echo "  ServerAliveInterval 60" >> ~/.ssh/config
+        echo "  ServerAliveCountMax 10" >> ~/.ssh/config
+        echo "  TCPKeepAlive yes" >> ~/.ssh/config
+        chmod 600 ~/.ssh/config
+        
         git config --global user.name "${{ github.actor }}"
         git config --global user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
         repo init --depth=1 -u ${{ steps.manifest.outputs.value }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
